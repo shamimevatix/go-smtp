@@ -35,8 +35,10 @@ func main() {
 
 	// Connect to the server, authenticate, set the sender and recipient,
 	// and send the email all in one step.
-	to := []string{"recipient@example.net"}
+	to := []string{"recipient@example.net", "ccrecipient@example.com", "bccrecipient@example.com"}
 	msg := strings.NewReader("To: recipient@example.net\r\n" +
+	        "Cc: ccrecipient@example.com\r\n"+
+		"Bcc: bccrecipient@example.com\r\n"+
 		"Subject: discount Gophers!\r\n" +
 		"\r\n" +
 		"This is the email body.\r\n")
